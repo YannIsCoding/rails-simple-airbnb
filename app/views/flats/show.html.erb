@@ -1,0 +1,10 @@
+<h1><%= @flat.name  %></h1>
+<p> <%= link_to 'edit', edit_flat_path(@flat)  %> <%= link_to 'delete', flat_path(@flat), :method => :delete %></p>
+
+<%= image_tag @flat.picture, alt: "flat_image" %>
+<p><%= @flat.description %></p>
+<p><%= @flat.address %></p>
+<p><%= @flat.price_per_night  %>euro</p>
+
+
+<%= link_to 'home', root_path  %>

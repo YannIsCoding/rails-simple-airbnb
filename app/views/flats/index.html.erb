@@ -1,0 +1,19 @@
+<h1>All our lovely flats</h1>
+
+<%= link_to 'Add a flat', new_flat_path  %>
+
+<form action="flats#index">
+  <input type="text" name="search" placeholder="Search" value=<%= params[:search] %>><br><br>
+  <input type="submit" value="search">
+</form>
+
+<ul>
+  <% @flats.each do |flat| %>
+    <li>
+      <p> <%= link_to flat.name, flat_path(flat) %> </p>
+      <p> <%= flat.address %> </p>
+      <%= image_tag flat.picture, alt: "flat_image" %>
+      <p> <%= flat.price_per_night %> euro</p>
+    </li>
+  <% end %>
+</ul>
